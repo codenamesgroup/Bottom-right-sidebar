@@ -3,13 +3,14 @@ const app = express();
 const mysql = require("mysql");
 const path = require("path");
 
-app.use(express.static("./client/dist/"));
+app.use(express.static("../client/dist/"));
 
 const connection = mysql.createConnection({
-  host: "chompy-test-database.cr8yw4uwndba.us-west-1.rds.amazonaws.com",
+  // host: "chompy-test-database.cr8yw4uwndba.us-west-1.rds.amazonaws.com",
   user: "root",
-  database: "chompyremote",
-  password: "chompydatabase"
+  database: 'chompy'
+  //database: "chompyremote",
+  //password: "chompydatabase"
 });
 
 connection.connect(function(err) {
